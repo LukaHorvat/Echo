@@ -24,6 +24,7 @@ executable Echo
                      , vect
                      , generic-deriving
                      , template-haskell
+                     , mtl
   default-extensions:  NoImplicitPrelude
   hs-source-dirs:      src
   default-language:    Haskell2010
