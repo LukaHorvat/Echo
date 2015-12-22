@@ -43,9 +43,7 @@ cos' (Angle x) = cos x
 data AngleSpan = AngleSpan Angle Angle deriving (Eq, Show, Read)
 
 mkAngle :: Number -> Angle
-mkAngle x | x >= 2 * pi = Angle $ x `mod'` (2 * pi)
-          | x <  0      = Angle $ x `mod'` (2 * pi) + 2 * pi
-          | otherwise   = Angle x
+mkAngle = Angle . (`mod'` (2 * pi))
 
 vecToGloss :: Vec2 -> Point
 vecToGloss (Vec2 x y) = (realToFrac x, realToFrac y)
